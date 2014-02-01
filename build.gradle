@@ -1,0 +1,88 @@
+/*
+ * Copyright (C) 2014 Monofraps
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+group = 'net.monofraps'
+version = '1.0'
+
+gradle.taskGraph.whenReady {taskGraph ->
+    if(!taskGraph.hasTask(release)) {
+      //  version += '-SNAPSHOT'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+
+    compile 'org.apache.httpcomponents:httpclient:4.3.1'
+    compile 'org.apache.httpcomponents:httpmime:4.3.1'
+    compile 'commons-io:commons-io:2.4'
+    compile 'com.google.guava:guava:15.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+
+    compile gradleApi()
+    compile localGroovy()
+}
+
+task javadocsJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from 'build/docs/javadoc'
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+signing {
+    sign configurations.archives
+}
+
+artifacts {
+    archives jar
+
+    archives javadocsJar
+    archives sourcesJar
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifact sourcesJar {
+                classifier "sources"
+            }
+        }
+    }
+}
+
+task snapshot(dependsOn: 'uploadArchives') << {
+    println 'Snapshot deploy!'
+}
+
+task release(dependsOn: 'uploadArchives') << {
+    println 'Release deploy!'
+}
