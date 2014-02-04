@@ -33,9 +33,9 @@ public class RemoteDebugging
      */
     private String jvmArguments = "-agentlib:jdwp=transport=$transport$,server=y,suspend=n,address=$address$";
 
-    private String address;
+    private String address = "21451";
 
-    private DebuggingTransport debuggingTransport;
+    private DebuggingTransport debuggingTransport = DebuggingTransport.SOCKET;
 
     public String getJvmArguments()
     {
