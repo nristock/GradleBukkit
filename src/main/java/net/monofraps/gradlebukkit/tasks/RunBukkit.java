@@ -18,8 +18,8 @@
 package net.monofraps.gradlebukkit.tasks;
 
 import com.google.common.base.Stopwatch;
-import net.monofraps.gradlebukkit.exxtensions.Bukkit;
-import net.monofraps.gradlebukkit.exxtensions.RemoteDebugging;
+import net.monofraps.gradlebukkit.extensions.Bukkit;
+import net.monofraps.gradlebukkit.extensions.RemoteDebugging;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.file.ConfigurableFileTree;
 import org.gradle.api.tasks.TaskAction;

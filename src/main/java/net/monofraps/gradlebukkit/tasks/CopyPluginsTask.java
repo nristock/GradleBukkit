@@ -17,7 +17,7 @@
 
 package net.monofraps.gradlebukkit.tasks;
 
-import net.monofraps.gradlebukkit.exxtensions.Bukkit;
+import net.monofraps.gradlebukkit.extensions.Bukkit;
 import org.apache.commons.io.FileUtils;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.TaskAction;

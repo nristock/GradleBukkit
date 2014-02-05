@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.monofraps.gradlebukkit.exxtensions;
+package net.monofraps.gradlebukkit.extensions;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;

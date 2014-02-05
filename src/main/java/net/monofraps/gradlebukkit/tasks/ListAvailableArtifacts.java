@@ -20,7 +20,7 @@ package net.monofraps.gradlebukkit.tasks;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import net.monofraps.gradlebukkit.exxtensions.Bukkit;
+import net.monofraps.gradlebukkit.extensions.Bukkit;
 import net.monofraps.gradlebukkit.models.BuildArtifact;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

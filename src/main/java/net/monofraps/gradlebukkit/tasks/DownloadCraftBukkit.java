@@ -21,7 +21,7 @@ import com.google.common.base.Strings;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import groovy.lang.Closure;
-import net.monofraps.gradlebukkit.exxtensions.Bukkit;
+import net.monofraps.gradlebukkit.extensions.Bukkit;
 import net.monofraps.gradlebukkit.models.BuildArtifact;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;

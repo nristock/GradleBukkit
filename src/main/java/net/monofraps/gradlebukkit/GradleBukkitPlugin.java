@@ -17,7 +17,7 @@
 
 package net.monofraps.gradlebukkit;
 
-import net.monofraps.gradlebukkit.exxtensions.Bukkit;
+import net.monofraps.gradlebukkit.extensions.Bukkit;
 import net.monofraps.gradlebukkit.tasks.CopyPluginsTask;
 import net.monofraps.gradlebukkit.tasks.DownloadCraftBukkit;
 import net.monofraps.gradlebukkit.tasks.ListAvailableArtifacts;
