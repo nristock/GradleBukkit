@@ -54,6 +54,7 @@ Plugin Configuration
 
 
 **Debugging Transport Options**:
+
 Debugging transport options are defined in net.monofraps.gradlebukkit.DebuggingTransport
 
 * SOCKET (network transport, specify port in address field)
